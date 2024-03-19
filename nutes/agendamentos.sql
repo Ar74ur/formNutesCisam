@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/03/2024 às 19:15
+-- Tempo de geração: 18/03/2024 às 19:35
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -43,6 +43,23 @@ CREATE TABLE `agendamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `ID` int(11) NOT NULL,
+  `login` varchar(255) NOT NULL,
+  `senha` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID`, `login`, `senha`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -53,6 +70,12 @@ ALTER TABLE `agendamentos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -61,6 +84,12 @@ ALTER TABLE `agendamentos`
 --
 ALTER TABLE `agendamentos`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
